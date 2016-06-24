@@ -14,7 +14,7 @@ import sun.font.TrueTypeFont
 abstract class pattern
 case class Var(name: String) extends pattern
 case class Func(arg: String, body: pattern) extends pattern
-case class App(p1: pattern, p2: pattern) extends pattern
+case class Appl(p1: pattern, p2: pattern) extends pattern
 
 
 object pattern_match {
@@ -30,7 +30,7 @@ object pattern_match {
       case Func(x, body) =>
         print("^" + x + ".")
         printPattern(body)
-      case App(b1, b2) =>
+      case Appl(b1, b2) =>
         print("(")
         printPattern(b1)
         print(" ")
@@ -48,7 +48,7 @@ object pattern_match {
   def main(args: Array[String]): Unit ={
 
     val id = Func("x", Var("x"))
-    val pt = Func("x", Func("y", App(Var("x"), Var("y"))))
+    val pt = Func("x", Func("y", Appl(Var("x"), Var("y"))))
 
     printPattern(pt)
     println

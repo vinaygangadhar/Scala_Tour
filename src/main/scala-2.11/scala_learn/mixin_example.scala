@@ -7,7 +7,7 @@ package scala_learn
 //abstract class with type and
 //incomplete methods
 abstract class TemplateIterator{
-  type T
+  type T                    //Type parameter
   def hasNext: Boolean
   def next: T
 }
@@ -48,7 +48,7 @@ object TemplateIterator {
     val iter = new Iter
 
     //call the method
-    iter foreach(println)
+    iter.foreach(println)
   }
 
   TemplateIterator.main(Array("Vinay"))
