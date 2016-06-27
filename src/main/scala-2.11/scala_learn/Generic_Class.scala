@@ -5,7 +5,9 @@ package scala_learn
   */
 
 //A generic implementation of stack
+//mutable stack
 
+//invariant implementation
 class Stack[T] {
   var elems: List[T] = Nil
   def push(x: T) = { elems = x :: elems}

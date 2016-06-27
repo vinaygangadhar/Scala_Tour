@@ -16,7 +16,7 @@ object ComplexImplicits {
 
   //tuple of doubles to Complex
   implicit def Tuple2Complex(value: Tuple2[Double, Double]): Complex =
-    new Complex(value._1, value._2)
+    new Complex(value._1, value._2);
 }
 
 
